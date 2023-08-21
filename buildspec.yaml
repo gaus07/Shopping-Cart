@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - sudo apt-get update
+      - sudo apt install -y nginx
+      - sudo apt install -y docker.io
+      - sudo apt install -y docker-compose
+  build:
+    commands:
+      - cp . .
+  post_build:
+    commands:
+      - echo nignx running
