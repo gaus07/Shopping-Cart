@@ -3,15 +3,15 @@ version: 0.0
 os: linux
 
 files:
-  - source: /
-    destination: /
+  - source: "**/*"
+    destination: /app
     
 hooks:
   BeforeInstall:
-    - location: scripts/install_nginx.sh
+    - location: scripts/install.sh
       timeout: 300
       runas: root
   ApplicationStart:
-    location: scripts/start_nginx.sh
+    location: scripts/start.sh
     timeout: 300
     runas: root
